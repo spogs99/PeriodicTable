@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <head>
+        <title>Tabela Periódica</title>
+        <style>
+
+        .table1 {
+            border-style: groove;
+            padding: 15px;
+            background-color: rgb(237, 222, 241);
+            width: 55%;
+            box-shadow: 10px 10px 10px black;   
+        }
+
+
+        button {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            transition: 0.4;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .btnImprimir {
+            font-size: 12px;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            padding-right: 0;
+        }
+
+        button:hover {
+            transform: scale(1.5, 1.5);
+            transition: 0.5s;
+
+        }
+
+        .blank {
+            visibility: hidden;
+        }
+
+        #blank {
+            display: block;
+        }
+
+        .NaoMetais {
+            background-color: green;
+        
+        }
+        .NaoMetais:hover {
+            background-color: rgb(53, 168, 53);
+        }
+
+        .MetaisAlcalinos {
+            background-color: orange;
+        }
+        .MetaisAlcalinos:hover {
+            background-color: rgb(253, 193, 82);
+        }
+
+        .MetaisAlcalinoTerrosos{
+            background-color: gold;
+        }
+        .MetaisAlcalinoTerrosos:hover{
+            background-color: rgb(247, 230, 133);
+        }
+
+        .MetaisTransicao{
+            background-color: darksalmon;
+        }
+        .MetaisTransicao:hover{
+            background-color: rgb(241, 186, 167);
+        }
+        
+        .GasesNobres {
+            background-color: royalblue;
+        }
+        .GasesNobres:hover {
+            background-color: rgb(127, 154, 236);
+        }
+
+        .SemiMetais{
+            background-color: lightseagreen;
+        }
+        .SemiMetais:hover{
+            background-color: rgb(114, 212, 207);
+        }
+        
+        .Halogeneos {
+            background-color: lightskyblue;
+        }
+        .Halogeneos:hover {
+            background-color: rgb(142, 181, 206);
+        }
+
+        .OutrosMetais{
+            background-color: lightsteelblue;
+        }
+        .OutrosMetais:hover{
+            background-color: rgb(206, 218, 233);
+        }
+
+        .Lantanideos{
+            background-color: mediumturquoise;
+        }
+        .Lantanideos:hover{
+            background-color: rgb(160, 218, 216);
+        }
+
+        .Actinideos{
+            background-color: plum;
+        }
+        .Actinideos:hover{
+            background-color: rgb(241, 200, 241);
+        }
+        
+        .letras{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            height: 27px;
+            text-align: center;
+
+        }
+        .numeros{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
+            font-size: 10px;
+            height: 19px;
+        }
+        
+        div {
+            display: block;
+        }
+
+        .textTitulo {
+            font-size: 24px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            border-style: solid;
+            border-color: darkorchid;
+            border-width: 2px;
+            animation-name: color;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+
+        .descricao {
+            border-width: 2px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 14px;
+            
+        }
+
+        .contDescricao {
+
+        }
+
+        @keyframes color {
+            0% {
+                background-color: rgb(243, 71, 128);
+            }
+            10% {
+                background-color: rgb(236, 99, 248);
+                
+                
+            }
+            20% {
+                background-color: rgb(159, 128, 209);
+                
+            }
+            30% {
+                background-color: rgb(68, 114, 199);
+                
+                
+            }
+            40% {
+                background-color: rgb(162, 214, 238);
+                
+            }
+            50% {
+                background-color: rgb(55, 194, 171);
+                
+                
+            }
+            60% {
+                background-color: rgb(116, 243, 201);
+                
+            }
+            70% {
+                background-color: rgb(134, 241, 120);
+                
+            }
+            80% {
+                background-color: rgb(130, 172, 90);
+                
+                
+            }
+            90% {
+                background-color: rgb(209, 219, 65);
+                
+            }
+            100% {
+                background-color: rgb(209, 147, 128);
+                
+            }
+
+        }
+
+
+        .table2 {
+            border-style: double;
+            background-color: rgb(255, 255, 255);
+            width: 200;
+            height: 300px;
+            box-shadow: 10px 10px 10px 10px black;
+            animation-name: rotation;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;   
+        }
+
+        tr {
+            height: 30px;
+        }
+
+        .td_NaoMetais {
+            width: 30px;
+            height: 30px;
+            background-color: green ;
+        }
+
+        .td_MetaisAlcalinos{
+            width: 30px;
+            height: 30px;
+            background-color: orange ;
+
+        }
+
+        .td_MetaisAlcalinoTerrosos{
+            width: 30px;
+            height: 30px;
+            background-color: gold ;
+
+        }
+
+        .td_MetaisTransicao {
+            width: 30px;
+            height: 30px;
+            background-color: darksalmon ;
+        }
+
+        .td_GasesNobres {
+            width: 30px;
+            height: 30px;
+            background-color: royalblue ;
+
+        }
+
+        .td_SemiMetais {
+            width: 30px;
+            height: 30px;
+            background-color: lightseagreen ;
+        }
+
+        .td_Halogenios {
+            width: 30px;
+            height: 30px;
+            background-color: lightskyblue ;
+        }
+
+        .td_OutrosMetais {
+            width: 30px;
+            height: 30px;
+            background-color: lightsteelblue ;
+        }
+
+        .td_Lantanideos {
+            width: 30px;
+            height: 30px;
+            background-color: mediumturquoise ;
+        }
+
+        .td_Actinideos {
+            width: 30px;
+            height: 30px;
+            background-color: plum ;
+        }
+
+        .td2 {
+            width: 170px;
+            height: 30px;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: translate(825px,0)
+            }
+
+            100% {
+                transform: translate(0px, 0);
+            }
+        }
+
+        </style>
+
+        <script>
+            function setDesc(cla, elem) {
+                document.getElementById('blank').style.display = 'none'
+                document.getElementById(elem).style.display = 'block'
+                document.getElementById('descricao').className += cla;
+            }
+    
+            function clearDesc(elem) {
+                document.getElementById(elem).style.display = 'none'
+                document.getElementById('blank').style.display = 'block'
+                document.getElementById('descricao').className = 'descricao';
+            }
+        </script>
+
+    </head>
+    <body>
+        <table class="table1">
+            <tr>
+                
+            </tr>
+            <tr>
+                <td><button class="NaoMetais"><div class="numeros">1</div><div class="letras">H</div></button></td>
+                <td colspan="1"></td>
+                <td colspan="10" class="textTitulo"><i class="fal fa-atom-alt"></i> Tabela Periódica <i class="fal fa-atom-alt"></i></td>
+                <td><button class="btnImprimir">Imprimir PDF</button></td>
+                <td colspan="4"></td>
+                <td><button class="GasesNobres"><div class="numeros">2</div><div class="letras">He</div></button></td>
+            </tr>
+            <tr>
+                <td><button class="MetaisAlcalinos"><div class="numeros">3</div><div class="letras">Li</div></button></td>
+                <td><button class="MetaisAlcalinoTerrosos"><div class="numeros">4</div><div class="letras">Be</div></button></td>
+                <td id="descricao" class="descricao"colspan="10" rowspan="2">
+                    <div id="blank" class="descricao">A Tabela Periódica é um modelo que agrupa todos os elementos químicos conhecidos e suas propriedades. Eles estão organizados em ordem crescente correspondente aos números atômicos (número de prótons).</div>
+                    <!--Coluna 1-->
+                    <div id="H" class="descricao"></div>
+                    <div id="Li" class="descricao"></div>
+                    <div id="Na" class="descricao"></div>
+                    <div id="K" class="descricao"></div>
+                    <div id="Rb" class="descricao"></div>
+                    <div id="Cs" class="descricao"></div>
+                    <div id="Fr" class="descricao"></div>
+                    <!--Coluna 2-->
+                    <div id="Be" class="descricao"></div>
+                    <div id="Mg" class="descricao"></div>
+                    <div id="Ca" class="descricao"></div>
+                    <div id="Sr" class="descricao"></div>
+                    <div id="Ba" class="descricao"></div>
+                    <div id="Ra" class="descricao"></div>
+                    <!--Coluna 3-->
+                    <div id="Sc" class="descricao"></div>
+                    <div id="Y" class="descricao"></div>
+                    <!--Coluna 4-->
+                    <div id="Ti" class="descricao"></div>
+                    <div id="Zr" class="descricao"></div>
+                    <div id="Hf" class="descricao"></div>
+                    <div id="Rf" class="descricao"></div>
+                    <div id="La" class="descricao"></div>
+                    <div id="Ac" class="descricao"></div>
+                    <!--Coluna 5-->
+                    <div id="V" class="descricao"></div>
+                    <div id="Nb" class="descricao"></div>
+                    <div id="Ta" class="descricao"></div>
+                    <div id="Db" class="descricao"></div>
+                    <div id="Ce" class="descricao"></div>
+                    <div id="Th" class="descricao"></div>
+                    <!--Coluna 6-->
+                    <div id="Cr" class="descricao"></div>
+                    <div id="Mo" class="descricao"></div>
+                    <div id="W" class="descricao"></div>
+                    <div id="Sg" class="descricao"></div>
+                    <div id="Pr" class="descricao"></div>
+                    <div id="Pa" class="descricao"></div>
+                    <!--Coluna 7-->
+                    <div id="Mn" class="descricao"></div>
+                    <div id="Tc" class="descricao"></div>
+                    <div id="Re" class="descricao"></div>
+                    <div id="Bh" class="descricao"></div>
+                    <div id="Nd" class="descricao"></div>
+                    <div id="U" class="descricao"></div>
+                    <!--Coluna 8-->
+                    <div id="Fe" class="descricao"></div>
+                    <div id="Ru" class="descricao"></div>
+                    <div id="Os" class="descricao"></div>
+                    <div id="Hs" class="descricao"></div>
+                    <div id="Pm" class="descricao"></div>
+                    <div id="Np" class="descricao"></div>
+                    <!--Coluna 9-->
+                    <div id="Co" class="descricao"></div>
+                    <div id="Rh" class="descricao"></div>
+                    <div id="Ir" class="descricao"></div>
+                    <div id="Mt" class="descricao"></div>
+                    <div id="Sm" class="descricao"></div>
+                    <div id="Pu" class="descricao"></div>
+                    <!--Coluna 10-->
+                    <div id="Ni" class="descricao"></div>
+                    <div id="Pd" class="descricao"></div>
+                    <div id="Pt" class="descricao"></div>
+                    <div id="Ds" class="descricao"></div>
+                    <div id="Eu" class="descricao"></div>
+                    <div id="Am" class="descricao"></div>
+                    <!--Coluna 11-->
+                    <div id="Cu" class="descricao"></div>
+                    <div id="Ag" class="descricao"></div>
+                    <div id="Au" class="descricao"></div>
+                    <div id="Rg" class="descricao"></div>
+                    <div id="Gd" class="descricao"></div>
+                    <div id="Cm" class="descricao"></div>
+                    <!--Coluna 12-->
+                    <div id="Zn" class="descricao"></div>
+                    <div id="Cd" class="descricao"></div>
+                    <div id="Hg" class="descricao"></div>
+                    <div id="Cn" class="descricao"></div>
+                    <div id="Tb" class="descricao"></div>
+                    <div id="Bk" class="descricao"></div>
+                    <!--Coluna 13-->
+                    <div id="B" class="descricao">Massa Atómica: 10.856</div>
+                    <div id="Al" class="descricao"></div>
+                    <div id="Ga" class="descricao"></div>
+                    <div id="In" class="descricao"></div>
+                    <div id="Tl" class="descricao"></div>
+                    <div id="Nh" class="descricao"></div>
+                    <div id="Dy" class="descricao"></div>
+                    <div id="Cf" class="descricao"></div>
+                    <!--Coluna 14-->
+                    <div id="C" class="descricao"></div>
+                    <div id="Si" class="descricao"></div>
+                    <div id="Ge" class="descricao"></div>
+                    <div id="Sn" class="descricao"></div>
+                    <div id="Pb" class="descricao"></div>
+                    <div id="Fl" class="descricao"></div>
+                    <div id="PHo" class="descricao"></div>
+                    <div id="Es" class="descricao"></div>
+                    <!--Coluna 15-->
+                    <div id="N" class="descricao"></div>
+                    <div id="P" class="descricao"></div>
+                    <div id="As" class="descricao"></div>
+                    <div id="Sb" class="descricao"></div>
+                    <div id="Bi" class="descricao"></div>
+                    <div id="Mc" class="descricao"></div>
+                    <div id="Er" class="descricao"></div>
+                    <div id="Fm" class="descricao"></div>
+                    <!--Coluna 16-->
+                    <div id="O" class="descricao"></div>
+                    <div id="S" class="descricao"></div>
+                    <div id="Se" class="descricao"></div>
+                    <div id="Te" class="descricao"></div>
+                    <div id="Po" class="descricao"></div>
+                    <div id="Lv" class="descricao"></div>
+                    <div id="Tm" class="descricao"></div>
+                    <div id="Md" class="descricao"></div>
+                    <!--Coluna 17-->
+                    <div id="F" class="descricao"></div>
+                    <div id="Cl" class="descricao"></div>
+                    <div id="Br" class="descricao"></div>
+                    <div id="I" class="descricao"></div>
+                    <div id="At" class="descricao"></div>
+                    <div id="Ts" class="descricao"></div>
+                    <div id="Yb" class="descricao"></div>
+                    <div id="No" class="descricao"></div>
+                    <!--Coluna 18-->
+                    <div id="He" class="descricao"></div>
+                    <div id="Ne" class="descricao"></div>
+                    <div id="Ar" class="descricao"></div>
+                    <div id="Kr" class="descricao"></div>
+                    <div id="Xe" class="descricao"></div>
+                    <div id="Rn" class="descricao"></div>
+                    <div id="Og" class="descricao"></div>
+                    <div id="Lu" class="descricao"></div>
+                    <div id="Lr" class="descricao"></div>
+                    
+                </td>
+                <td onmouseover="setDesc"><button class="SemiMetais"><div class="numeros">5</div><div class="letras">B</div></button></td>
+                <td><button class="NaoMetais"><div class="numeros">6</div><div class="letras">C</div></button></td>
+                <td><button class="NaoMetais"><div class="numeros">7</div><div class="letras">N</div></button></td>
+                <td><button class="NaoMetais"><div class="numeros">8</div><div class="letras">O</div></button></td>
+                <td><button class="Halogeneos"><div class="numeros">9</div><div class="letras">F</div></button></td>
+                <td><button class="GasesNobres"><div class="numeros">10</div><div class="letras">Ne</div></button></td>
+            </tr>
+            <tr>
+                <td><button class="MetaisAlcalinos"><div class="numeros">11</div><div class="letras">Na</div></button></td>
+                <td><button class="MetaisAlcalinoTerrosos"><div class="numeros">12</div><div class="letras">Mg</div></button></td>
+                <td><button class="OutrosMetais"><div class="numeros">13</div><div class="letras">Al</div></button></td>
+                <td><button class="SemiMetais"><div class="numeros">14</div><div class="letras">Si</div></button></td>
+                <td><button class="NaoMetais"><div class="numeros">15</div><div class="letras">P</div></button></td>
+                <td><button class="NaoMetais"><div class="numeros">16</div><div class="letras">S</div></button></td>
+                <td><button class="Halogeneos"><div class="numeros">17</div><div class="letras">Cl</div></button></td>
+                <td><button class="GasesNobres"><div class="numeros">18</div><div class="letras">Ar</div></button></td>
+            </tr>
+            <tr>
+                <td><button class="MetaisAlcalinos"><div class="numeros">19</div><div class="letras">K</div></button></td>
+                <td><button class="MetaisAlcalinoTerrosos"><div class="numeros">20</div><div class="letras">Ca</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">21</div><div class="letras">Sc</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">22</div><div class="letras">Ti</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">23</div><div class="letras">V</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">24</div><div class="letras">Cr</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">25</div><div class="letras">Mn</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">26</div><div class="letras">Fe</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">27</div><div class="letras">Co</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">28</div><div class="letras">Ni</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">29</div><div class="letras">Cu</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">30</div><div class="letras">Zn</div></button></td>
+                <td><button class="OutrosMetais"><div class="numeros">31</div><div class="letras">Ga</div></button></td>
+                <td><button class="SemiMetais"><div class="numeros">32</div><div class="letras">Ge</div></button></td>
+                <td><button class="SemiMetais"><div class="numeros">33</div><div class="letras">As</div></button></td>
+                <td><button class="NaoMetais"><div class="numeros">34</div><div class="letras">Se</div></button></td>
+                <td><button class="Halogeneos"><div class="numeros">35</div><div class="letras">Br</div></button></td>
+                <td><button class="GasesNobres"><div class="numeros">36</div><div class="letras">Kr</div></button></td>
+            </tr>
+            <tr>
+                <td><button class="MetaisAlcalinos"><div class="numeros">37</div><div class="letras">Rb</div></button></td>
+                <td><button class="MetaisAlcalinoTerrosos"><div class="numeros">38</div><div class="letras">Sr</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">39</div><div class="letras">Y</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">40</div><div class="letras">Zr</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">41</div><div class="letras">Nb</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">42</div><div class="letras">Mo</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">43</div><div class="letras">Tc</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">44</div><div class="letras">Ru</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">45</div><div class="letras">Rh</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">46</div><div class="letras">Pd</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">47</div><div class="letras">Ag</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">48</div><div class="letras">Cd</div></button></td>
+                <td><button class="OutrosMetais"><div class="numeros">49</div><div class="letras">In</div></button></td>
+                <td><button class="OutrosMetais"><div class="numeros">50</div><div class="letras">Sn</div></button></td>
+                <td><button class="SemiMetais"><div class="numeros">51</div><div class="letras">Sb</div></button></td>
+                <td><button class="SemiMetais"><div class="numeros">52</div><div class="letras">Te</div></button></td>
+                <td><button class="Halogeneos"><div class="numeros">53</div><div class="letras">I</div></button></td>
+                <td><button class="GasesNobres"><div class="numeros">54</div><div class="letras">Xe</div></button></td>
+            </tr>
+            <tr>
+                <td><button class="MetaisAlcalinos"><div class="numeros">55</div><div class="letras">Cs</div></button></td>
+                <td><button class="MetaisAlcalinoTerrosos"><div class="numeros">56</div><div class="letras">Ba</div></button></td>
+                <td colspan="1"></td>
+                <td><button class="MetaisTransicao"><div class="numeros">72</div><div class="letras">Hf</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">73</div><div class="letras">Ta</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">74</div><div class="letras">W</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">75</div><div class="letras">Re</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">76</div><div class="letras">Os</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">77</div><div class="letras">Ir</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">78</div><div class="letras">Pt</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">79</div><div class="letras">Au</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">80</div><div class="letras">Hg</div></button></td>
+                <td><button class="OutrosMetais"><div class="numeros">81</div><div class="letras">Tl</div></button></td>
+                <td><button class="OutrosMetais"><div class="numeros">82</div><div class="letras">Pb</div></button></td>
+                <td><button class="OutrosMetais"><div class="numeros">83</div><div class="letras">Bi</div></button></td>
+                <td><button class="SemiMetais"><div class="numeros">84</div><div class="letras">Po</div></button></td>
+                <td><button class="Halogeneos"><div class="numeros">85</div><div class="letras">At</div></button></td>
+                <td><button class="GasesNobres"><div class="numeros">86</div><div class="letras">Rn</div></button></td>
+            </tr>
+            <tr>
+                <td><button class="MetaisAlcalinos"><div class="numeros">87</div><div class="letras">Fr</div></button></td>
+                <td><button class="MetaisAlcalinoTerrosos"><div class="numeros">88</div><div class="letras">Ra</div></button></td>
+                <td colspan="1"></td>
+                <td><button class="MetaisTransicao"><div class="numeros">104</div><div class="letras">Rf</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">105</div><div class="letras">Db</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">106</div><div class="letras">Sg</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">107</div><div class="letras">Bh</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">108</div><div class="letras">Hs</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">109</div><div class="letras">Mt</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">110</div><div class="letras">Ds</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">111</div><div class="letras">Rg</div></button></td>
+                <td><button class="MetaisTransicao"><div class="numeros">112</div><div class="letras">Cn</div></button></td>
+                <td><button class="OutrosMetais"><div class="numeros">113</div><div class="letras">Nh</div></button></td>
+                <td><button class="OutrosMetais"><div class="numeros">114</div><div class="letras">Fl</div></button></td>
+                <td><button class="OutrosMetais"><div class="numeros">115</div><div class="letras">Mc</div></button></td>
+                <td><button class="OutrosMetais"><div class="numeros">116</div><div class="letras">Lv</div></button></td>
+                <td><button class="Halogeneos"><div class="numeros">117</div><div class="letras">Ts</div></button></td>
+                <td><button class="GasesNobres"><div class="numeros">118</div><div class="letras">Og</div></button></td>
+            </tr>
+            <tr>
+                <td colspan="18"></td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td><button class="Lantanideos"><div class="numeros">57</div><div class="letras">La</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">58</div><div class="letras">Ce</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">59</div><div class="letras">Pr</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">60</div><div class="letras">Nd</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">61</div><div class="letras">Pm</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">62</div><div class="letras">Sm</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">63</div><div class="letras">Eu</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">64</div><div class="letras">Gd</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">65</div><div class="letras">Tb</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">66</div><div class="letras">Dy</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">67</div><div class="letras">PHo</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">68</div><div class="letras">Er</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">69</div><div class="letras">Tm</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">70</div><div class="letras">Yb</div></button></td>
+                <td><button class="Lantanideos"><div class="numeros">71</div><div class="letras">Lu</div></button></td> 
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td><button class="Actinideos"><div class="numeros">89</div><div class="letras">Ac</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">90</div><div class="letras">Th</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">91</div><div class="letras">Pa</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">92</div><div class="letras">U</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">93</div><div class="letras">Np</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">94</div><div class="letras">Pu</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">95</div><div class="letras">Am</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">96</div><div class="letras">Cm</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">97</div><div class="letras">Bk</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">98</div><div class="letras">Cf</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">99</div><div class="letras">Es</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">100</div><div class="letras">Fm</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">101</div><div class="letras">Md</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">102</div><div class="letras">No</div></button></td>
+                <td><button class="Actinideos"><div class="numeros">103</div><div class="letras">Lr</div></button></td>
+               
+            </tr>
+
+
+        </table>
+
+        <table class="table2">
+            <tr>
+                <td class="td_NaoMetais"></td>
+                <td class="td2">Não metais</td>
+                
+            </tr>
+            <tr>
+                <td class="td_MetaisAlcalinos"></td>
+                <td class="td2">Metais alcalinos</td>
+            </tr>
+            <tr>
+                <td class="td_MetaisAlcalinoTerrosos"></td>
+                <td class="td2">Metais alcalino-terrosos</td>
+            </tr>
+            <tr>
+                <td class="td_MetaisTransicao"></td>
+                <td class="td2">Metais transição</td>
+            </tr>
+            <tr>
+                <td class="td_GasesNobres"></td>
+                <td class="td2">Gases Nobres</td>
+            </tr>
+            <tr>
+                <td class="td_SemiMetais"></td>
+                <td class="td2">Semimetais</td>
+            </tr>
+            <tr>
+                <td class="td_Halogenios"></td>
+                <td class="td2">Halogénios</td>
+            </tr>
+            <tr>
+                <td class="td_OutrosMetais"></td>
+                <td class="td2">Outros metais</td>
+            </tr>
+            <tr>
+                <td class="td_Lantanideos"></td>
+                <td class="td2">Lantanídeos</td>
+            </tr>
+            <tr>
+                <td class="td_Actinideos"></td>
+                <td class="td2">Actinídeos</td>
+            </tr>
+        </table>
+    </body>
+</html>
